@@ -3,10 +3,27 @@ import Card from "./shared/Card"
 import Button from "./shared/Button";
 
 function FeedbackForm() {
-  const [reviewText, setReviewTExt] = useState('');
+  const [text, setText] = useState('');
+  const [btnDisabled, setbtnDisabled] = useState(true);
+  const [message, setMessage] = useState('');
 
-  const handleReviewText = (e) => {
-    setReviewTExt(e.target.value);
+  const handleTextChange = (e) => {
+
+    if (message === '') {
+      setbtnDisabled(true)
+      setMessage(null)
+
+    } else if (text !== '' && text.trim().length <= 10) {
+      setbtnDisabled(true)
+      setMessage('Insert at least 10 chars')
+      setbtnDisabled(true)
+
+    } else {
+      setMessage(null);
+      setbtnDisabled(false)
+
+    }
+    setText(e.target.value);
   }
 
   return (
@@ -15,12 +32,15 @@ function FeedbackForm() {
         <h2>How would you rate your experince with us?</h2>
         <div className="input-group">
           <input
-            onChange={handleReviewText}
-            type="reviewText"
-            value={reviewText}
-            placeholder="Write a review here" />
-          <Button type="submit">Send</Button>
+            onChange={handleTextChange}
+            type="text"
+            placeholder="Write a review here"
+            value={text} />
+          <Button type="submit" isDisabled={btnDisabled}>
+            Send
+          </Button>
         </div>
+        {message && <div className='message'>{message}</div>}
       </form>
     </Card>
   )
