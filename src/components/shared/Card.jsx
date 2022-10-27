@@ -6,7 +6,7 @@ function Card({ children, reverse }) {
 
   return (
     <div
-      className="card"
+      className='card'
       // conditional styling
       style={{
         backgroundColor: reverse ? 'rgba(0,0,0,0.4)' : '#fff',

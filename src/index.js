@@ -10,11 +10,3 @@ root.render(
     <App />
   </StrictMode>
 )
-
-// React 17 version:
-// ReactDOM.render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>,
-//   document.getElementById('root')
-// );

@@ -1,10 +1,15 @@
 import { useState } from "react"
 
 function RatingSelect({ select }) {
-  const [selected, setSelected] = useState(10)
+  const [selected, setSelected] = useState(10);
 
   const handleChange = (e) => {
+    // as e.currentTarget.value is a string by default and we want a number
+    // we force the type conversion by adding the + sign!
     setSelected(+e.currentTarget.value)
+
+    // select is a property of RatingSelect being passed it's FeedbackForm invocation.
+    // we catch it in the function declaration on line 3 and here we set it to the user selected value 
     select(+e.currentTarget.value)
   }
 
@@ -17,8 +22,9 @@ function RatingSelect({ select }) {
           name='rating'
           value='1'
           onChange={handleChange}
-          checked={selected === 1} />
-        <label htmlFor="num1">1</label>
+          checked={selected === 1}
+        />
+        <label htmlFor='num1'>1</label>
       </li>
       <li>
         <input
@@ -27,8 +33,9 @@ function RatingSelect({ select }) {
           name='rating'
           value='2'
           onChange={handleChange}
-          checked={selected === 2} />
-        <label htmlFor="num2">2</label>
+          checked={selected === 2}
+        />
+        <label htmlFor='num2'>2</label>
       </li>
       <li>
         <input
@@ -37,8 +44,9 @@ function RatingSelect({ select }) {
           name='rating'
           value='3'
           onChange={handleChange}
-          checked={selected === 3} />
-        <label htmlFor="num3">3</label>
+          checked={selected === 3}
+        />
+        <label htmlFor='num3'>3</label>
       </li>
       <li>
         <input
@@ -47,8 +55,9 @@ function RatingSelect({ select }) {
           name='rating'
           value='4'
           onChange={handleChange}
-          checked={selected === 4} />
-        <label htmlFor="num4">4</label>
+          checked={selected === 4}
+        />
+        <label htmlFor='num4'>4</label>
       </li>
       <li>
         <input
@@ -57,8 +66,9 @@ function RatingSelect({ select }) {
           name='rating'
           value='5'
           onChange={handleChange}
-          checked={selected === 5} />
-        <label htmlFor="num5">5</label>
+          checked={selected === 5}
+        />
+        <label htmlFor='num5'>5</label>
       </li>
       <li>
         <input
@@ -67,8 +77,9 @@ function RatingSelect({ select }) {
           name='rating'
           value='6'
           onChange={handleChange}
-          checked={selected === 6} />
-        <label htmlFor="num6">6</label>
+          checked={selected === 6}
+        />
+        <label htmlFor='num6'>6</label>
       </li>
       <li>
         <input
@@ -77,8 +88,9 @@ function RatingSelect({ select }) {
           name='rating'
           value='7'
           onChange={handleChange}
-          checked={selected === 7} />
-        <label htmlFor="num7">7</label>
+          checked={selected === 7}
+        />
+        <label htmlFor='num7'>7</label>
       </li>
       <li>
         <input
@@ -87,8 +99,9 @@ function RatingSelect({ select }) {
           name='rating'
           value='8'
           onChange={handleChange}
-          checked={selected === 8} />
-        <label htmlFor="num8">8</label>
+          checked={selected === 8}
+        />
+        <label htmlFor='num8'>8</label>
       </li>
       <li>
         <input
@@ -97,8 +110,9 @@ function RatingSelect({ select }) {
           name='rating'
           value='9'
           onChange={handleChange}
-          checked={selected === 9} />
-        <label htmlFor="num9">9</label>
+          checked={selected === 9}
+        />
+        <label htmlFor='num9'>9</label>
       </li>
       <li>
         <input
@@ -107,8 +121,9 @@ function RatingSelect({ select }) {
           name='rating'
           value='10'
           onChange={handleChange}
-          checked={selected === 10} />
-        <label htmlFor="num10">10</label>
+          checked={selected === 10}
+        />
+        <label htmlFor='num10'>10</label>
       </li>
     </ul>
   )

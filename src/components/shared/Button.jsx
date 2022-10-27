@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 function Button({ children, version, type, isDisabled }) {
   return (
     <button
-      type={type} disabled={isDisabled} className={`btn btn-${version}`}>
+      type={type} disabled={isDisabled} className={`btn btn-${version}`} >
       {children}
     </button>
   )
@@ -13,7 +13,7 @@ function Button({ children, version, type, isDisabled }) {
 Button.defaultProps = {
   version: 'primary',
   type: 'button',
-  isDisabled: false
+  isDisabled: true,
 }
 
 Button.propTypes = {
